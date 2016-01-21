@@ -24,15 +24,17 @@ public class LibraryActivity extends AppCompatActivity {
         openButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Replace with startActivityForResult() to start BookActivity
-                Toast.makeText(LibraryActivity.this, R.string.toast_todo, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LibraryActivity.this, BookActivity.class);
+                startActivityForResult(intent, 0);
             }
         });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO get back book name
+        if (resultCode == 0) {
+            Toast.makeText(LibraryActivity.this, data.getStringExtra("book_name"), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
