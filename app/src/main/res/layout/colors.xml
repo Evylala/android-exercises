@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left text"
+        android:textColor="#FFF"
+        android:padding="10dp"
+        android:background="@color/red"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Below left text"
+        android:id="@+id/below_left_text"
+        android:textColor="#FFF"
+        android:padding="10dp"
+        android:background="@color/purple"
+        android:layout_below="@id/left_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right text"
+        android:padding="10dp"
+        android:background="@color/pink"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/deep_purple"
+        android:layout_centerInParent="true"
+        android:text="Center text"/>
+
+    <TextView
+        android:id="@+id/bottom_center_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/indigo"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Bottom center text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/blue"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/bottom_center_text"
+        android:text="Above Bottom center text"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/below_left_text"
+            android:layout_marginBottom="@dimen/layout_padding"
+            android:layout_marginTop="@dimen/layout_padding">
+
+            <TextView
+                android:text="BIG"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/red"
+                android:padding="@dimen/text_padding"/>
+
+            <TextView
+                android:text="SHORT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@color/blue"
+                android:padding="@dimen/text_padding"/>
+
+        </LinearLayout>
+
+</RelativeLayout>
