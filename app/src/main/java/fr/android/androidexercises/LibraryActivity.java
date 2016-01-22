@@ -2,6 +2,7 @@ package fr.android.androidexercises;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,10 @@ public class LibraryActivity extends AppCompatActivity {
 
         List<Book> books = getBooks();
 
-        // TODO findViewById() and setAdapter()
+        BookAdapter adapter = new BookAdapter(this, books);
+        ListView bookList = (ListView) findViewById(R.id.bookListView);
+        bookList.setAdapter(adapter);
+
     }
 
     private List<Book> getBooks() {
