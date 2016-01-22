@@ -2,6 +2,8 @@ package fr.android.androidexercises;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,9 +21,15 @@ public class LibraryActivity extends AppCompatActivity {
 
         List<Book> books = getBooks();
 
-        BookAdapter adapter = new BookAdapter(this, books);
-        ListView bookList = (ListView) findViewById(R.id.bookListView);
-        bookList.setAdapter(adapter);
+        //BookAdapter adapter = new BookAdapter(this, books);
+        //ListView bookList = (ListView) findViewById(R.id.bookListView);
+        RecycledBookAdapter myRecycledAdapter = new RecycledBookAdapter(books);
+        RecyclerView bookList = (RecyclerView) findViewById(R.id.my_recycler_view);
+        bookList.setHasFixedSize(true);
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        bookList.setLayoutManager(mLayoutManager);
+
+        bookList.setAdapter(myRecycledAdapter);
 
     }
 
